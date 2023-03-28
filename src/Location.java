@@ -36,8 +36,8 @@ public class Location
     public int hashCode() {
         int res = 1;//любое простое число(для определения res)
         //Возьмём другое число из головы
-        res=10*res+xCoord;
-        res=10*res+yCoord;
+        res=11*res+xCoord;
+        res=11*res+yCoord;
         return res;
     }
 }

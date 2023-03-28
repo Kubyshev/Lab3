@@ -70,15 +70,16 @@ public class AStarState
      * waypoint's "previous cost" value.
      **/
     public boolean addOpenWaypoint(Waypoint newWP) {
-
-        if((numOpenWaypoints() == 0)||newWP.getPreviousCost() < openWaypoint.get(newWP.getLocation()).getPreviousCost()&&openWaypoint.containsKey(newWP.getLocation()))
+        if(!openWaypoint.containsKey(newWP.getLocation()))
         {
             openWaypoint.put(newWP.getLocation(),newWP);
             return true;
         }
-
-    
-
+        if(newWP.getPreviousCost() < openWaypoint.get(newWP.getLocation()).getPreviousCost())
+        {
+                openWaypoint.put(newWP.getLocation(),newWP);
+                return true;
+        }
 
         return false;
     }
